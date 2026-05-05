@@ -1,0 +1,27 @@
+name: "Setup Python environment"
+description: "Instala Python, cachea dependencias e instala los paquetes del proyecto. Reutilizable por todos los jobs."
+
+inputs:
+  python-version:
+    description: "Versión de Python a instalar"
+    required: false
+    default: "3.12"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Configurar Python ${{ inputs.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: "pip"
+        cache-dependency-path: |
+          requirements.txt
+          requirements-dev.txt
+
+    - name: Instalar dependencias
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements-dev.txt
+        python -m pip install -e .

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-actions-lab"
+version = "1.0.0"
+description = "Aplicación de ejemplo para laboratorio de CI/CD con GitHub Actions"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Sergio Santiago", email = "sergio@secture.com" }]
+license = { text = "MIT" }
+
+[project.scripts]
+calc = "app.main:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["app"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
