@@ -1,5 +1,7 @@
 # gh-actions-lab
 
+[![CI](https://github.com/sergio-santiago/gh-actions-lab/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/sergio-santiago/gh-actions-lab/actions/workflows/ci-cd.yml)
+
 Laboratorio de **CI/CD con GitHub Actions** sobre una aplicación Python sencilla
 (una calculadora invocable por CLI).
 
