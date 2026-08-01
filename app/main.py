@@ -1,4 +1,4 @@
-"""Punto de entrada CLI de la aplicación."""
+"""CLI entry point of the application."""
 
 from __future__ import annotations
 
@@ -20,12 +20,12 @@ OPERATIONS = {
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="calc",
-        description="Calculadora simple usada en el laboratorio de CI/CD.",
+        description="Simple calculator used in the CI/CD lab.",
     )
     parser.add_argument("--version", action="version", version=f"calc {__version__}")
-    parser.add_argument("operation", choices=OPERATIONS.keys(), help="Operación a ejecutar")
-    parser.add_argument("a", type=float, help="Primer operando")
-    parser.add_argument("b", type=float, help="Segundo operando")
+    parser.add_argument("operation", choices=OPERATIONS.keys(), help="Operation to run")
+    parser.add_argument("a", type=float, help="First operand")
+    parser.add_argument("b", type=float, help="Second operand")
     return parser
 
 

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gh-actions-lab"
 version = "1.0.0"
-description = "Aplicación de ejemplo para laboratorio de CI/CD con GitHub Actions"
+description = "Sample application for a CI/CD lab with GitHub Actions"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Sergio Santiago", email = "sergio@secture.com" }]

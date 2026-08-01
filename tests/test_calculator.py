@@ -1,4 +1,4 @@
-"""Tests unitarios del módulo calculator."""
+"""Unit tests for the calculator module."""
 
 import pytest
 
