@@ -7,12 +7,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Cancela ejecuciones anteriores de la misma rama para no duplicar trabajo.
+# Cancel any earlier run on the same branch rather than duplicate the work.
 concurrency:
   group: ci-cd-${{ github.ref }}
   cancel-in-progress: true
 
-# Permisos mínimos a nivel global; cada job pide los suyos si necesita más.
+# Least privilege globally. A job that needs more asks for it itself.
 permissions:
   contents: read
 
@@ -139,7 +139,7 @@ jobs:
           tag_name: v1.0.0-${{ github.run_number }}
           name: Release ${{ github.run_number }} (${{ github.sha }})
           body: |
-            Despliegue automático generado por el pipeline.
+            Automated deployment produced by the pipeline.
             - Commit: ${{ github.sha }}
             - Workflow run: ${{ github.run_id }}
           files: dist/*

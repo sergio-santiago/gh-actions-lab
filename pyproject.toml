@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "Sample application for a CI/CD lab with GitHub Actions"
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{ name = "Sergio Santiago", email = "sergio@secture.com" }]
+authors = [{ name = "Sergio Santiago Henares", email = "sersanhen@gmail.com" }]
 license = { text = "MIT" }
 
 [project.scripts]
